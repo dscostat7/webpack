@@ -53,6 +53,7 @@ export class NegociacaoController {
 
     _limpaFormulario() {
 
+
         this._inputData.value = '';
         this._inputQuantidade.value = 1;
         this._inputValor.value = 0.0
@@ -74,7 +75,7 @@ export class NegociacaoController {
 
         try {
             const { NegociacaoService } = await System.import('../domain/negociacao/NegociacaoService.js');
-            const service = NegociacaoService();
+            const service = new NegociacaoService();
             const negociacoes = await this._service.obtemNegociacoesDoPeriodo();
             console.log(negociacoes);
             negociacoes.filter(novaNegociacao =>
